@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Блог:{{ write.id }}</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'btp4/css/bootstrap.min.css' %}">
+
+	<script  src="{% static 'jq/jquery.min.js' %}"></script>
+	<script  src="{% static 'btp4/js/bootstrap.bundle.min.js' %}"></script>
+
+	
+</head>
+<body style="background: {{ write.col }}">
+
+
+<h1 style="text-align: center;">{{ write.header|safe }}</h1> <br><br>
+
+<h4>{{ write.description|safe }}</h4> <br><br><br>
+
+<img src="http://127.0.0.1:8000/media/{{ write.image }}" width="250" height="250"><br><br><br>
+
+<p>{{ write.main_information|safe }}</p>
+
+
+
+
+</body>
+</html>
+

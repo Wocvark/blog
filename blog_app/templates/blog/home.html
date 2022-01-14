@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Главная</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'btp4/css/bootstrap.min.css' %}">
+
+	<script  src="{% static 'jq/jquery.min.js' %}"></script>
+	<script  src="{% static 'btp4/js/bootstrap.bundle.min.js' %}"></script>
+</head>
+<body style="background: #32CD32;">
+
+	{% if count == 0 %}
+
+	<h1 style="text-align: center;">Количество блогов: 0 </h1>
+
+	{% else %}
+	<h1 style="text-align: center;">Количество блогов:{{ count }}</h1>
+
+	{% endif %}
+
+	<br>
+
+
+	
+
+	{%for i in q1 %}
+ 	<div style="background: #6495ED;">
+
+	<a href="{% url 'blogs' i.id %}"><h1>{{ i.header|safe }}</h1></a>
+
+	{{ i.description|safe }} <br><br>
+
+	<b>{{ i.pub_date }}</b>
+
+
+	</div>
+	<br><br><br>
+	
+
+	{% endfor %}
+
+	
+
+</body>
+</html>
